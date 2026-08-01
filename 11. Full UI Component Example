@@ -1,0 +1,12 @@
+// PromptCard
+<Card className="glass border-violet-500/20">
+  <Tabs><Tab>Preview</Tab><Tab>JSON</Tab><Tab>Markdown</Tab></Tabs>
+  <pre>{prompt}</pre>
+  <div className="flex gap-2">
+    <Button onClick={copy}>Copy</Button>
+    <Button>Download</Button><Button>Share</Button><Button>Favorite</Button>
+  </div>
+  <div className="grid grid-cols-4 gap-2">
+    {['Improve','Fix','Shorten','Expand','To JSON','Explain','Optimize for Claude','Optimize for Midjourney','Optimize for Veo'].map(a=> <Button variant="outline" key={a}>{a}</Button>)}
+  </div>
+</Card>
