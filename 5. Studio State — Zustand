@@ -1,0 +1,6 @@
+create((set)=> ({
+  category: 'Text', model: 'gpt-5', framework: 'standard', style: 'professional',
+  advanced: { tone: 'confident', audience: 'general', temp: 0.7, keywords: [] },
+  image: { camera: 'ARRI Alexa 65', lens: '85mm', lighting: 'cinematic', aspect: '16:9', cfg: 7, seed: -1 },
+  video: { duration: 8, fps: 24, cameraMotion: 'dolly', transition: 'fade' }
+}))
