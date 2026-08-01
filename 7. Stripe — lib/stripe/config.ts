@@ -1,0 +1,5 @@
+export const PLANS = {
+  FREE: { price: 0, credits: 50 },
+  PRO: { price: 1900, credits: 1000, priceId: 'price_pro' },
+  BUSINESS: { price: 4900, credits: 5000, priceId: 'price_business' }
+}
