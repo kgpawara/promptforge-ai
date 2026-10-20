@@ -1,0 +1,22 @@
+/app
+  (landing)/page.tsx - Hero + Features + Pricing + FAQ
+  (app)/studio/page.tsx - Generator Studio (protected)
+  (app)/dashboard/page.tsx - Usage, Collections, Billing
+  /api/generate/route.ts - Edge streaming generation
+  /api/improve/route.ts - Improve/Fix/Shorten/Expand
+  /api/stripe/webhook/route.ts - Billing
+  /admin/page.tsx - Admin analytics
+/components
+  ui/ - shadcn: Button, Card, Dialog, Tabs, Select, Slider
+  landing/ - HeroGradient, FeatureGrid, PricingToggle
+  studio/ - GeneratorSidebar, InputArea, PromptCard, AdvancedPanel, ImageControls, VideoControls
+  dashboard/ - UsageChart, HistoryTable, CollectionGrid
+/lib
+  ai/providers/index.ts - OpenAI, Anthropic, Gemini, Grok, Replicate router
+  ai/promptBuilder.ts - Framework composition logic
+  stripe/config.ts
+  supabase/client.ts
+  utils/cn.ts
+/prisma/schema.prisma
+/hooks/usePromptHistory.ts
+/store/useStudioStore.ts - Zustand
