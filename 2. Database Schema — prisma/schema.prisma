@@ -1,37 +1,11 @@
 generator client { provider = "prisma-client-js" }
 datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
 
-model User {
-  id String @id @default(cuid())
-  clerkId String @unique
-  email String @unique
-  plan Plan @default(FREE)
-  credits Int @default(50)
-  stripeCustomerId String? @unique
-  prompts Prompt[]
-  collections Collection[]
-}
+model User { id String @id @default(cuid()) clerkId String @unique email String @unique plan Plan @default(FREE) credits Int @default(50) stripeCustomerId String? @unique prompts Prompt[] collections Collection[]}
 
 enum Plan { FREE PRO BUSINESS ENTERPRISE }
 
-model Prompt {
-  id String @id @default(cuid())
-  userId String
-  user User @relation(fields:[userId], references:[id])
-  title String
-  content String @db.Text
-  rawInput String @db.Text
-  category String
-  model String
-  framework String
-  style String
-  metadata Json?
-  isFavorite Boolean @default(false)
-  version Int @default(1)
-  collectionId String?
-  createdAt DateTime @default(now())
-  @@index([userId, createdAt])
-}
+model Prompt {id String @id @default(cuid()) userId String user User @relation(fields:[userId] references:[id]),title String content String @db.Text rawInput String @db.Text category String model String,framework String style String metadata Json? isFavorite Boolean @default(false) version Int @default(1) collectionId String? createdAt DateTime @default(now()) @@index([userId, createdAt])}
 
 model Collection { id String @id @default(cuid()); userId String; user User @relation(fields:[userId], references:[id]); name String; prompts Prompt[]; createdAt DateTime @default(now()) }
 model Usage { id String @id @default(cuid()); userId String; user User @relation(fields:[userId], references:[id]); tokens Int; model String; cost Float; createdAt DateTime @default(now()) }
